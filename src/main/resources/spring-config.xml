@@ -11,5 +11,16 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd">
     <context:annotation-config />
     <context:component-scan base-package="foo.bar"/>
+
+    <!--启用aspectj自动代理-->
     <aop:aspectj-autoproxy />
+
+    <!-- XML方式 演示-->
+    <!--此处仅列举一个前置通知，其他与注解形式类似-->
+    <aop:config>
+        <aop:aspect ref="cerebellum">
+            <aop:pointcut id="speak" expression="execution(* foo.bar.observed.HelloByXml.sayHello(String)) and args(arg)"/>
+            <aop:before method="think" pointcut-ref="speak"/>
+        </aop:aspect>
+    </aop:config>
 </beans>
