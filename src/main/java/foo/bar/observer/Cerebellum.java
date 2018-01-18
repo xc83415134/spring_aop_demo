@@ -18,7 +18,7 @@ public class Cerebellum {
      * 目标方法返回后执行
      */
     public void listen(String arg){
-        System.out.println("2.说完后要虚心接受长辈的教诲");
+        System.out.println("2.说完后要虚心接受长辈的教诲s");
     }
 
     /**
